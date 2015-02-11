@@ -56,11 +56,9 @@ job.prototype.camel = function (fileName) {
 };
 
 job.prototype.getFileName = function (relative) {
-  var fileName = relative.split(path.sep).pop(),
-      parts = fileName.split(/\./);
-
+  var fileName = relative.split(path.sep).join('-');
+  var parts = fileName.split(/\./);
   parts.pop();
-
   return parts.join('');
 };
 
